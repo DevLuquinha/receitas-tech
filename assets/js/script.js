@@ -36,17 +36,25 @@ document.addEventListener('DOMContentLoaded', () => {
 
         // Para cada receita na lista, cria um "card"
         recipesToDisplay.forEach(recipe => {
-            const card = document.createElement('div');
-            card.classList.add('recipe-card');
+            const cardLink = document.createElement('a'); 
+            cardLink.href = `pages/recipe.html?id=${recipe.id}`;
+            cardLink.classList.add('recipe-card-link'); // Classe para o card, futuramente.
 
-            card.innerHTML = `
-                <img src="${recipe.image}" alt="${recipe.title}">
-                <h3>${recipe.title}</h3>
-                <p>Tempo: ${recipe.prepTime}</p>
+            // const card = document.createElement('div');
+            // card.classList.add('recipe-card');
+
+            cardLink.innerHTML = `
+                <div class="recipe-card">
+                    <img src="${recipe.image}" alt="${recipe.title}">
+                    <div class="card-content">
+                        <h3>${recipe.title}</h3>
+                        <p>Tempo: ${recipe.prepTime}</p>
+                    </div>
+                </div>
             `;
 
             // Adiciona o card criado ao container na página
-            recipeContainer.appendChild(card);
+            recipeContainer.appendChild(cardLink);
         });
     }
 
