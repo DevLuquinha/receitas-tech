@@ -7,7 +7,7 @@ document.addEventListener('DOMContentLoaded', () => {
         {
             id: 1,
             titulo: "Bolo de Cenoura",
-            imagem: "images/bolo-cenoura.jpe    g",
+            imagem: "images/bolo-cenoura.jpeg",
             categoria: "Doces",
             tempoPreparo: "40 min"
         },
