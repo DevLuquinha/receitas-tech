@@ -2,19 +2,19 @@
 document.addEventListener('DOMContentLoaded', () => {
 
     // --- 1. DADOS (simulando um banco de dados) ---
-    // No futuro, isso virá do seu backend
+    // No futuro, isso virá do o backend
     const recipes = [
         {
             id: 1,
             title: "Bolo de Cenoura",
-            image: "images/bolo-cenoura.jpeg",
+            image: "assets/images/bolo-cenoura.jpeg",
             category: "Doces",
             prepTime: "40 min"
         },
         {
             id: 2,
             title: "Lasanha à Bolonhesa",
-            image: "images/lasanha.jpg",
+            image: "assets/images/lasanha.jpg",
             category: "Massas",
             prepTime: "90 min"
         },
@@ -26,7 +26,6 @@ document.addEventListener('DOMContentLoaded', () => {
     const searchInput = document.getElementById('searchInput');
 
     // --- 3. FUNÇÕES ---
-
     /**
      * Função para renderizar as receitas na tela.
      * @param {Array} recipesToDisplay - A lista de receitas a ser mostrada.
@@ -65,14 +64,11 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // --- 4. EVENTOS ---
-    
     // Adiciona um "ouvinte" que chama a função de filtrar toda vez que o usuário digita algo
     searchInput.addEventListener('keyup', filterRecipes);
     
 
     // --- 5. INICIALIZAÇÃO ---
-
     // Exibe todas as receitas quando a página carrega pela primeira vez
     displayRecipes(recipes);
-
 });
