@@ -3,20 +3,20 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // --- 1. DADOS (simulando um banco de dados) ---
     // No futuro, isso virá do seu backend
-    const receitas = [
+    const recipes = [
         {
             id: 1,
-            titulo: "Bolo de Cenoura",
-            imagem: "images/bolo-cenoura.jpeg",
-            categoria: "Doces",
-            tempoPreparo: "40 min"
+            title: "Bolo de Cenoura",
+            image: "images/bolo-cenoura.jpeg",
+            category: "Doces",
+            prepTime: "40 min"
         },
         {
             id: 2,
-            titulo: "Lasanha à Bolonhesa",
-            imagem: "images/lasanha.jpg",
-            categoria: "Massas",
-            tempoPreparo: "90 min"
+            title: "Lasanha à Bolonhesa",
+            image: "images/lasanha.jpg",
+            category: "Massas",
+            prepTime: "90 min"
         },
         // ... adicione mais receitas aqui
     ];
@@ -29,21 +29,21 @@ document.addEventListener('DOMContentLoaded', () => {
 
     /**
      * Função para renderizar as receitas na tela.
-     * @param {Array} receitasParaExibir - A lista de receitas a ser mostrada.
+     * @param {Array} recipesToDisplay - A lista de receitas a ser mostrada.
      */
-    function exibirReceitas(receitasParaExibir) {
+    function displayRecipes(recipesToDisplay) {
         // Limpa o container para não duplicar receitas
         recipeContainer.innerHTML = '';
 
         // Para cada receita na lista, cria um "card"
-        receitasParaExibir.forEach(receita => {
+        recipesToDisplay.forEach(recipe => {
             const card = document.createElement('div');
             card.classList.add('recipe-card');
 
             card.innerHTML = `
-                <img src="${receita.imagem}" alt="${receita.titulo}">
-                <h3>${receita.titulo}</h3>
-                <p>Tempo: ${receita.tempoPreparo}</p>
+                <img src="${recipe.image}" alt="${recipe.title}">
+                <h3>${recipe.title}</h3>
+                <p>Tempo: ${recipe.prepTime}</p>
             `;
 
             // Adiciona o card criado ao container na página
@@ -54,25 +54,25 @@ document.addEventListener('DOMContentLoaded', () => {
     /**
      * Função para filtrar as receitas com base na busca.
      */
-    function filtrarReceitas() {
-        const termoBusca = searchInput.value.toLowerCase();
+    function filterRecipes() {
+        const searchTerm = searchInput.value.toLowerCase();
 
-        const receitasFiltradas = receitas.filter(receita => {
-            return receita.titulo.toLowerCase().includes(termoBusca);
+        const filteredRecipes = recipes.filter(recipe => {
+            return recipe.title.toLowerCase().includes(searchTerm);
         });
 
-        exibirReceitas(receitasFiltradas);
+        displayRecipes(filteredRecipes);
     }
 
     // --- 4. EVENTOS ---
     
     // Adiciona um "ouvinte" que chama a função de filtrar toda vez que o usuário digita algo
-    searchInput.addEventListener('keyup', filtrarReceitas);
+    searchInput.addEventListener('keyup', filterRecipes);
     
 
     // --- 5. INICIALIZAÇÃO ---
 
     // Exibe todas as receitas quando a página carrega pela primeira vez
-    exibirReceitas(receitas);
+    displayRecipes(recipes);
 
 });
