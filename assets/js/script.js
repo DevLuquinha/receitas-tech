@@ -74,7 +74,6 @@ document.addEventListener('DOMContentLoaded', () => {
     // --- 4. EVENTOS ---
     // Adiciona um "ouvinte" que chama a função de filtrar toda vez que o usuário digita algo
     searchInput.addEventListener('keyup', filterRecipes);
-    
 
     // --- 5. INICIALIZAÇÃO ---
     // Exibe todas as receitas quando a página carrega pela primeira vez
