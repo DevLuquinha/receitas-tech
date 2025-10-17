@@ -17,14 +17,15 @@ document.addEventListener('DOMContentLoaded', () => {
             image: "assets/images/lasanha.jpg",
             category: "Massas",
             prepTime: "90 min"
-        }   
+        }
         // ... adicione mais receitas aqui
     ];
 
     // --- 2. SELEÇÃO DE ELEMENTOS DO DOM ---
     const recipeContainer = document.getElementById('recipe-container');
     const searchInput = document.getElementById('searchInput');
-
+    const filterButtons = document.querySelectorAll('.filter-btn');
+    
     // --- 3. FUNÇÕES ---
     /**
      * Função para renderizar as receitas na tela.
@@ -36,7 +37,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         // Para cada receita na lista, cria um "card"
         recipesToDisplay.forEach(recipe => {
-            const cardLink = document.createElement('a'); 
+            const cardLink = document.createElement('a');
             cardLink.href = `pages/recipe.html?id=${recipe.id}`;
             cardLink.classList.add('recipe-card-link'); // Classe para o card, futuramente.
 
@@ -66,6 +67,48 @@ document.addEventListener('DOMContentLoaded', () => {
         });
 
         displayRecipes(filteredRecipes);
+    }
+
+    
+    /** 
+     * Função para filtrar receitas por categoria quando um botão é clicado.
+     */
+    filterButtons.forEach(button => {
+        button.addEventListener('click', function () {
+            // Remove active de todos os botões
+            filterButtons.forEach(btn => btn.classList.remove('active'));
+
+            // Adiciona active ao botão clicado
+            this.classList.add('active');
+
+            // Pega a categoria selecionada
+            const category = this.getAttribute('data-category');
+
+            // Filtra as receitas
+            filterRecipes(category);
+        });
+    });
+
+    /**
+     * Função para filtrar receitas por categoria.
+     */
+    function filterRecipes(category) {
+        const recipeCards = document.querySelectorAll('.recipe-card');
+
+        recipeCards.forEach(card => {
+            if (category === 'todos') {
+                card.style.display = 'block';
+            } else {
+                const cardCategory = card.getAttribute('data-category');
+                if (cardCategory === category) {
+                    card.style.display = 'block';
+                } else {
+                    card.style.display = 'none';
+                }
+            }
+        });
+
+        console.log(`Filtrando por: ${category}`);
     }
 
     // --- 4. EVENTOS ---
