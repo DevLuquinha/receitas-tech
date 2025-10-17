@@ -8,14 +8,16 @@
     <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
-
     <header>
-        <div class="logo">
-            <!-- Implementar a logo futuramente -->
-             <h1>ReceitasTech</h1>
-        </div>
-        <nav>
+        <div class="header-container">
+            <div class="logo">
+                <h1>ReceitasTech</h1>
+            </div>
+            <nav class="auth-nav">
+                <button id="loginButton" class="btn-auth">Login</button>
+                <button id="registerButton" class="btn-auth btn-auth-primary">Registrar</button>
             </nav>
+        </div>
     </header>
 
     <main>
@@ -25,8 +27,20 @@
                 <input type="text" id="searchInput" placeholder="Qual receita você procura?">
                 <button id="searchButton">Buscar</button>
             </div>
+
             <div class="filters">
+                <h3>Filtrar por Categoria</h3>
+                <div class="filter-buttons">
+                    <button class="filter-btn active" data-category="todos">Todos</button>
+                    <button class="filter-btn" data-category="doces">🍰 Doces</button>
+                    <button class="filter-btn" data-category="salgados">🥘 Salgados</button>
+                    <button class="filter-btn" data-category="massas">🍝 Massas</button>
+                    <button class="filter-btn" data-category="bolos">🎂 Bolos</button>
+                    <button class="filter-btn" data-category="paes">🍞 Pães</button>
+                    <button class="filter-btn" data-category="bebidas">🥤 Bebidas</button>
+                    <button class="filter-btn" data-category="sobremesas">🍮 Sobremesas</button>
                 </div>
+            </div>
         </section>
 
         <section class="recipe-gallery">
