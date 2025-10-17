@@ -40,9 +40,6 @@ document.addEventListener('DOMContentLoaded', () => {
             cardLink.href = `pages/recipe.html?id=${recipe.id}`;
             cardLink.classList.add('recipe-card-link'); // Classe para o card, futuramente.
 
-            // const card = document.createElement('div');
-            // card.classList.add('recipe-card');
-
             cardLink.innerHTML = `
                 <div class="recipe-card">
                     <img src="${recipe.image}" alt="${recipe.title}">
