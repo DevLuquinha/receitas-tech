@@ -6,17 +6,44 @@
     <title>ReceitasTech - Encontre a Receita Perfeita</title>
 
     <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/header.css">
+    <link rel="stylesheet" href="assets/css/modal.css">
 </head>
 <body>
-    <header>
+    <header class="header">
         <div class="header-container">
             <div class="logo">
-                <h1>ReceitasTech</h1>
+                <a href="index.html">
+                    <span class="logo-icon">🍳</span>
+                    <span class="logo-text">ReceitasTech</span>
+                </a>
             </div>
-            <nav class="auth-nav">
-                <button id="loginButton" class="btn-auth">Login</button>
-                <button id="registerButton" class="btn-auth btn-auth-primary">Registrar</button>
+
+            <nav class="nav-menu">
+                <ul>
+                    <li><a href="index.html" class="active">Início</a></li>
+                    <li><a href="#receitas">Receitas</a></li>
+                    <li><a href="#sobre">Sobre</a></li>
+                    <li><a href="#contato">Contato</a></li>
+                </ul>
             </nav>
+
+            <div class="auth-nav">
+                <button id="loginButton" class="btn-auth btn-login">
+                    <span class="btn-icon">👤</span>
+                    <span>Entrar</span>
+                </button>
+                <button id="registerButton" class="btn-auth btn-register">
+                    <span class="btn-icon">✨</span>
+                    <span>Cadastrar</span>
+                </button>
+            </div>
+
+            <button class="menu-toggle" id="menuToggle" aria-label="Menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
         </div>
     </header>
 
@@ -53,6 +80,7 @@
         <p>&copy; 2025 ReceitasTech. Todos os direitos reservados.</p>
     </footer>
 
+    <script src="assets/js/header.js"></script>
     <script src="assets/js/script.js"></script>
 </body>
 </html>
