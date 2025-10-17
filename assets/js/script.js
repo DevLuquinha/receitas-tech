@@ -85,14 +85,14 @@ document.addEventListener('DOMContentLoaded', () => {
             const category = this.getAttribute('data-category');
 
             // Filtra as receitas
-            filterRecipes(category);
+            filterRecipesByCategory(category);
         });
     });
 
     /**
      * Função para filtrar receitas por categoria.
      */
-    function filterRecipes(category) {
+    function filterRecipesByCategory(category) {
         const recipeCards = document.querySelectorAll('.recipe-card');
 
         recipeCards.forEach(card => {
