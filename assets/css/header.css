@@ -1,0 +1,349 @@
+/* ============================================
+   HEADER STYLES - ReceitasTech
+   Componente reutilizável para todas as páginas
+   ============================================ */
+
+/* ===== HEADER PRINCIPAL ===== */
+.header {
+    background: linear-gradient(135deg, #FF6B6B 0%, #FF8E53 100%);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    transition: all 0.3s ease;
+}
+
+.header.scrolled {
+    box-shadow: 0 6px 30px rgba(0, 0, 0, 0.15);
+}
+
+.header-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 80px;
+    gap: 2rem;
+}
+
+/* ===== LOGO ===== */
+.logo a {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    text-decoration: none;
+    color: white;
+    transition: transform 0.3s ease;
+}
+
+.logo a:hover {
+    transform: scale(1.05);
+}
+
+.logo-icon {
+    font-size: 36px;
+    filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.2));
+    animation: float 3s ease-in-out infinite;
+}
+
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0px);
+    }
+    50% {
+        transform: translateY(-8px);
+    }
+}
+
+.logo-text {
+    font-size: 28px;
+    font-weight: 700;
+    letter-spacing: -0.5px;
+    background: linear-gradient(180deg, #ffffff 0%, #f0f0f0 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* ===== NAVEGAÇÃO CENTRAL ===== */
+.nav-menu {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+}
+
+.nav-menu ul {
+    display: flex;
+    list-style: none;
+    gap: 2.5rem;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-menu a {
+    color: rgba(255, 255, 255, 0.9);
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 16px;
+    transition: all 0.3s ease;
+    position: relative;
+    padding: 8px 0;
+}
+
+.nav-menu a::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0;
+    height: 3px;
+    background: white;
+    border-radius: 2px;
+    transition: width 0.3s ease;
+}
+
+.nav-menu a:hover,
+.nav-menu a.active {
+    color: white;
+}
+
+.nav-menu a:hover::before,
+.nav-menu a.active::before {
+    width: 100%;
+}
+
+/* ===== BOTÕES DE AUTENTICAÇÃO ===== */
+.auth-nav {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+}
+
+.btn-auth {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 12px 24px;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    border-radius: 50px;
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    background: transparent;
+    color: white;
+    letter-spacing: 0.3px;
+    position: relative;
+    overflow: hidden;
+}
+
+.btn-auth::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.1);
+    transition: left 0.3s ease;
+}
+
+.btn-auth:hover::before {
+    left: 100%;
+}
+
+.btn-icon {
+    font-size: 18px;
+    filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.1));
+}
+
+.btn-login {
+    border-color: white;
+}
+
+.btn-login:hover {
+    background: white;
+    color: #FF6B6B;
+    border-color: white;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+.btn-register {
+    background: white;
+    color: #FF6B6B;
+    border-color: white;
+}
+
+.btn-register:hover {
+    background: rgba(255, 255, 255, 0.95);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* ===== MENU TOGGLE (MOBILE) ===== */
+.menu-toggle {
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 30px;
+    height: 24px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    z-index: 1001;
+}
+
+.menu-toggle span {
+    display: block;
+    width: 100%;
+    height: 3px;
+    background: white;
+    border-radius: 3px;
+    transition: all 0.3s ease;
+}
+
+.menu-toggle.active span:nth-child(1) {
+    transform: translateY(10.5px) rotate(45deg);
+}
+
+.menu-toggle.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.menu-toggle.active span:nth-child(3) {
+    transform: translateY(-10.5px) rotate(-45deg);
+}
+
+/* ===== RESPONSIVIDADE ===== */
+
+/* Tablets */
+@media (max-width: 992px) {
+    .header-container {
+        padding: 0 1.5rem;
+        height: 70px;
+    }
+
+    .nav-menu ul {
+        gap: 1.5rem;
+    }
+
+    .logo-text {
+        font-size: 24px;
+    }
+
+    .logo-icon {
+        font-size: 32px;
+    }
+
+    .btn-auth {
+        padding: 10px 20px;
+        font-size: 14px;
+    }
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+    .header-container {
+        height: 65px;
+        padding: 0 1rem;
+    }
+
+    .menu-toggle {
+        display: flex;
+    }
+
+    .nav-menu {
+        position: fixed;
+        top: 65px;
+        left: -100%;
+        width: 100%;
+        height: calc(100vh - 65px);
+        background: linear-gradient(180deg, #FF6B6B 0%, #FF8E53 100%);
+        flex-direction: column;
+        justify-content: flex-start;
+        padding: 2rem;
+        transition: left 0.4s ease;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+    }
+
+    .nav-menu.active {
+        left: 0;
+    }
+
+    .nav-menu ul {
+        flex-direction: column;
+        gap: 0;
+        width: 100%;
+    }
+
+    .nav-menu li {
+        width: 100%;
+        text-align: center;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    }
+
+    .nav-menu a {
+        display: block;
+        padding: 1.2rem;
+        font-size: 18px;
+    }
+
+    .nav-menu a::before {
+        display: none;
+    }
+
+    .auth-nav {
+        gap: 8px;
+    }
+
+    .btn-auth {
+        padding: 8px 16px;
+        font-size: 13px;
+        gap: 6px;
+    }
+
+    .btn-auth span:not(.btn-icon) {
+        display: none;
+    }
+
+    .btn-icon {
+        font-size: 20px;
+    }
+}
+
+/* Mobile pequeno */
+@media (max-width: 480px) {
+    .header-container {
+        gap: 1rem;
+        height: 60px;
+        padding: 0 0.75rem;
+    }
+
+    .logo-text {
+        font-size: 20px;
+    }
+
+    .logo-icon {
+        font-size: 28px;
+    }
+
+    .nav-menu {
+        top: 60px;
+        height: calc(100vh - 60px);
+    }
+
+    .btn-auth {
+        padding: 8px 12px;
+        border-width: 2px;
+    }
+
+    .btn-icon {
+        font-size: 18px;
+    }
+}

@@ -1,0 +1,53 @@
+<!-- 
+    HEADER COMPONENT - ReceitasTech
+    Componente reutilizável para todas as páginas
+    
+    COMO USAR:
+    1. Copie este código e cole no topo de cada página (após a tag <body>)
+    2. Certifique-se de que os arquivos CSS e JS estão sendo carregados:
+       - assets/css/header.css
+       - assets/css/modal.css
+       - assets/js/header.js
+    3. Ajuste o link da classe "active" de acordo com a página atual
+-->
+
+<header class="header">
+    <div class="header-container">
+        <!-- Logo -->
+        <div class="logo">
+            <a href="index.html">
+                <span class="logo-icon">🍳</span>
+                <span class="logo-text">ReceitasTech</span>
+            </a>
+        </div>
+
+        <!-- Menu de Navegação -->
+        <nav class="nav-menu">
+            <ul>
+                <li><a href="index.html" class="active">Início</a></li>
+                <li><a href="#receitas">Receitas</a></li>
+                <li><a href="#sobre">Sobre</a></li>
+                <li><a href="#contato">Contato</a></li>
+            </ul>
+        </nav>
+
+        <!-- Botões de Autenticação -->
+        <div class="auth-nav">
+            <button id="loginButton" class="btn-auth btn-login">
+                <span class="btn-icon">👤</span>
+                <span>Entrar</span>
+            </button>
+            <button id="registerButton" class="btn-auth btn-register">
+                <span class="btn-icon">✨</span>
+                <span>Cadastrar</span>
+            </button>
+        </div>
+
+        <!-- Menu Toggle (Mobile) -->
+        <button class="menu-toggle" id="menuToggle" aria-label="Menu">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+    </div>
+</header>
