@@ -17,7 +17,7 @@ document.addEventListener('DOMContentLoaded', () => {
             image: "assets/images/lasanha.jpg",
             category: "Massas",
             prepTime: "90 min"
-        },
+        }   
         // ... adicione mais receitas aqui
     ];
 
