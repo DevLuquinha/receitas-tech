@@ -1,0 +1,104 @@
+/* ============================================
+   PÁGINA DE RECEITA - ReceitasTech
+   Estilos específicos da página de detalhes
+   ============================================ */
+
+/* ===== IMAGEM DA RECEITA ===== */
+.recipe-image-container {
+    width: 100%;
+    max-width: 900px;
+    margin: 0 auto var(--spacing-large);
+    position: relative;
+    border-radius: var(--border-radius-medium);
+    overflow: hidden;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);
+}
+
+.recipe-detail-image {
+    width: 100%;
+    height: auto;
+    max-height: 500px;
+    object-fit: cover;
+    display: block;
+    transition: transform var(--transition-slow);
+}
+
+.recipe-image-container:hover .recipe-detail-image {
+    transform: scale(1.05);
+}
+
+/* Overlay com gradiente na imagem */
+.recipe-image-container::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 30%;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.5), transparent);
+    pointer-events: none;
+}
+
+/* Badge de categoria sobre a imagem (opcional) */
+.recipe-image-badge {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background: rgba(255, 107, 107, 0.95);
+    color: white;
+    padding: 8px 16px;
+    border-radius: var(--border-radius-large);
+    font-weight: 600;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+}
+
+/* ===== TÍTULO DA RECEITA ===== */
+#recipe-detail-content h1 {
+    font-size: 2.8rem;
+    color: var(--primary-color);
+    margin-bottom: var(--spacing-unit);
+    text-align: center;
+}
+
+/* ===== METADADOS DA RECEITA ===== */
+.recipe-meta {
+    display: flex;
+    justify-content: center;
+    gap: var(--spacing-large);
+    font-size: 1.1rem;
+    margin-bottom: var(--spacing-large);
+    padding-bottom: var(--spacing-unit);
+    border-bottom: 1px solid var(--border-color);
+    flex-wrap: wrap;
+}
+
+.recipe-meta span {
+    background-color: #f1f1f1;
+    padding: var(--spacing-small) var(--spacing-unit);
+    border-radius: var(--border-radius-large);
+    text-transform: capitalize;
+}
+
+/* ===== INSTRUÇÕES DA RECEITA ===== */
+.recipe-instructions h2 {
+    font-size: 1.8rem;
+    color: var(--primary-color);
+    margin-top: var(--spacing-large);
+    margin-bottom: var(--spacing-unit);
+    border-left: 4px solid var(--secondary-color);
+    padding-left: 0.8rem;
+}
+
+.recipe-instructions ul,
+.recipe-instructions ol {
+    padding-left: var(--spacing-large);
+    font-size: 1.1rem;
+    line-height: 1.8;
+}
+
+.recipe-instructions li {
+    margin-bottom: 0.8rem;
+}

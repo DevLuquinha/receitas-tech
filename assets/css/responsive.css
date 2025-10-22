@@ -1,0 +1,157 @@
+/* ============================================
+   RESPONSIVE - ReceitasTech
+   Media queries para diferentes tamanhos de tela
+   ============================================ */
+
+/* ===== TABLETS (max-width: 768px) ===== */
+@media (max-width: 768px) {
+    /* Busca e Filtros */
+    .search-and-filters h1 {
+        font-size: 2rem;
+    }
+
+    .search-bar {
+        flex-direction: column;
+        width: 90%;
+        margin: 0 auto var(--spacing-medium) auto;
+    }
+
+    .search-bar input[type="text"],
+    .search-bar button {
+        width: 100%;
+        max-width: unset;
+    }
+
+    .search-bar button {
+        margin-top: var(--spacing-small);
+    }
+
+    /* Grid de Receitas */
+    .recipe-grid {
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: var(--spacing-medium);
+    }
+
+    /* Página de Receita */
+    #recipe-detail-content h1 {
+        font-size: 2.2rem;
+    }
+
+    .recipe-meta {
+        gap: var(--spacing-unit);
+        font-size: 1rem;
+    }
+
+    .recipe-instructions h2 {
+        font-size: 1.5rem;
+    }
+
+    .recipe-instructions ul,
+    .recipe-instructions ol {
+        padding-left: var(--spacing-medium);
+        font-size: 1rem;
+    }
+}
+
+/* ===== MOBILE (max-width: 480px) ===== */
+@media (max-width: 480px) {
+    /* Busca e Filtros */
+    .search-and-filters {
+        max-width: 95%;
+        padding: var(--spacing-medium) var(--spacing-small);
+    }
+
+    .search-and-filters h1 {
+        font-size: 1.8rem;
+    }
+
+    .filters h3 {
+        font-size: 1rem;
+    }
+
+    .filter-btn {
+        font-size: 0.85rem;
+        padding: 0.4rem 0.8rem;
+    }
+
+    /* Cards */
+    .recipe-card h3 {
+        font-size: 1.2rem;
+    }
+
+    .recipe-card p {
+        font-size: 0.85rem;
+    }
+
+    .category-badge {
+        font-size: 0.75rem;
+        padding: 4px 10px;
+    }
+
+    /* Grid de Receitas */
+    .recipe-grid {
+        grid-template-columns: 1fr;
+        gap: var(--spacing-unit);
+        padding: 0 var(--spacing-small);
+    }
+
+    /* Página de Receita */
+    .recipe-detail-image {
+        max-height: 250px;
+    }
+
+    .recipe-image-container {
+        max-height: 250px;
+        margin-bottom: var(--spacing-medium);
+    }
+
+    #recipe-detail-content h1 {
+        font-size: 1.8rem;
+    }
+
+    .recipe-meta {
+        flex-direction: column;
+        gap: var(--spacing-small);
+        font-size: 0.95rem;
+    }
+
+    .recipe-meta span {
+        padding: 0.4rem 0.8rem;
+    }
+
+    .recipe-instructions h2 {
+        font-size: 1.3rem;
+    }
+
+    .recipe-instructions ul,
+    .recipe-instructions ol {
+        padding-left: var(--spacing-unit);
+        font-size: 0.95rem;
+    }
+
+    .recipe-instructions li {
+        margin-bottom: 0.6rem;
+    }
+
+    /* Container */
+    .container {
+        padding: 0 var(--spacing-small);
+    }
+
+    /* Gallery Title */
+    .recipe-gallery h2 {
+        font-size: 1.6rem;
+    }
+}
+
+/* ===== DESKTOP LARGE (min-width: 1400px) ===== */
+@media (min-width: 1400px) {
+    .recipe-grid {
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        max-width: 1400px;
+    }
+
+    .search-and-filters {
+        max-width: 1200px;
+    }
+}

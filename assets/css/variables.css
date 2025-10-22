@@ -1,0 +1,44 @@
+/* ============================================
+   VARIÁVEIS GLOBAIS - ReceitasTech
+   Definição de cores, espaçamentos e fontes
+   ============================================ */
+
+:root {
+    /* Cores Principais */
+    --primary-color: #FF6B6B;
+    --secondary-color: #4ECDC4;
+    
+    /* Cores de Texto */
+    --text-color-dark: #333;
+    --text-color-light: #f4f4f4;
+    
+    /* Cores de Fundo */
+    --background-light: #ffffff;
+    --background-dark: #f9f9f9;
+    
+    /* Cores de Borda */
+    --border-color: #ddd;
+    
+    /* Espaçamentos */
+    --spacing-unit: 1rem; /* 16px */
+    --spacing-small: 0.5rem;
+    --spacing-medium: 1.5rem;
+    --spacing-large: 2rem;
+    --spacing-xlarge: 3rem;
+    
+    /* Border Radius */
+    --border-radius-small: 8px;
+    --border-radius-medium: 12px;
+    --border-radius-large: 20px;
+    --border-radius-round: 50px;
+    
+    /* Sombras */
+    --shadow-small: 0 2px 4px rgba(0, 0, 0, 0.05);
+    --shadow-medium: 0 4px 8px rgba(0, 0, 0, 0.1);
+    --shadow-large: 0 8px 16px rgba(0, 0, 0, 0.15);
+    
+    /* Transições */
+    --transition-fast: 0.2s ease;
+    --transition-normal: 0.3s ease;
+    --transition-slow: 0.4s ease;
+}

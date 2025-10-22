@@ -1,0 +1,127 @@
+/* ============================================
+   COMPONENTES REUTILIZÁVEIS - ReceitasTech
+   Cards, botões, badges e outros componentes
+   ============================================ */
+
+/* ===== RECIPE CARDS ===== */
+.recipe-card {
+    background-color: var(--background-light);
+    border: 1px solid var(--border-color);
+    border-radius: var(--border-radius-medium);
+    overflow: hidden;
+    box-shadow: var(--shadow-medium);
+    transition: transform var(--transition-normal), box-shadow var(--transition-normal);
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+}
+
+.recipe-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-large);
+}
+
+.recipe-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.card-content {
+    padding: 1.2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    flex-grow: 1;
+}
+
+.recipe-card h3 {
+    font-size: 1.3rem;
+    margin: 0;
+    color: var(--text-color-dark);
+}
+
+.recipe-card p {
+    color: #666;
+    font-size: 0.95rem;
+    margin: 0;
+}
+
+.recipe-card-link {
+    text-decoration: none;
+    color: inherit;
+    display: block;
+}
+
+.recipe-card-link:hover .recipe-card {
+    transform: translateY(-8px);
+}
+
+/* ===== BADGES ===== */
+.category-badge {
+    display: inline-block;
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    color: white;
+    padding: 6px 14px;
+    border-radius: var(--border-radius-large);
+    font-size: 0.85rem;
+    font-weight: 600;
+    text-transform: capitalize;
+    align-self: flex-start;
+    margin-top: auto;
+    box-shadow: 0 2px 8px rgba(255, 107, 53, 0.3);
+}
+
+/* ===== BOTÕES ===== */
+.btn-primary {
+    background-color: var(--primary-color);
+    color: white;
+    padding: 0.8rem 1.5rem;
+    border: none;
+    border-radius: var(--border-radius-round);
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: 600;
+    transition: background-color var(--transition-normal), transform var(--transition-fast);
+}
+
+.btn-primary:hover {
+    background-color: #ff5252;
+    transform: translateY(-2px);
+}
+
+.btn-secondary {
+    background-color: var(--secondary-color);
+    color: white;
+    padding: 0.8rem 1.5rem;
+    border: none;
+    border-radius: var(--border-radius-round);
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: 600;
+    transition: background-color var(--transition-normal), transform var(--transition-fast);
+}
+
+.btn-secondary:hover {
+    background-color: #3BBFBA;
+    transform: translateY(-2px);
+}
+
+/* ===== MENSAGENS ===== */
+.no-results {
+    text-align: center;
+    padding: var(--spacing-xlarge);
+    font-size: 1.2rem;
+    color: #999;
+    grid-column: 1 / -1;
+}
+
+/* ===== GRID DE RECEITAS ===== */
+.recipe-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+    padding: 0 var(--spacing-unit);
+    max-width: 1200px;
+    margin: 0 auto;
+}
