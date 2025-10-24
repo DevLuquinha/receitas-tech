@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Enviar Receita - ReceitasTech</title>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="../assets/css/header.css">
+    <link rel="stylesheet" href="../assets/css/submit-recipe.css">
+</head>
+<body>
+    <!-- HEADER PADRÃO -->
+    <header class="header">
+        <div class="header-container">
+            <div class="logo">
+                <a href="../index.html">
+                    <span class="logo-icon">🍳</span>
+                    <span class="logo-text">ReceitasTech</span>
+                </a>
+            </div>
+
+            <nav class="nav-menu">
+                <ul>
+                    <li><a href="../index.html">Início</a></li>
+                    <li><a href="../pages/recipes.html">Receitas</a></li>
+                    <li><a href="../pages/submit-recipe.html" class="active">Enviar Receita</a></li>
+                </ul>
+            </nav>
+
+            <div class="auth-nav">
+                <button id="loginButton" class="btn-auth btn-login">
+                    <span class="btn-icon">👤</span>
+                    <span>Entrar</span>
+                </button>
+                <button id="registerButton" class="btn-auth btn-register">
+                    <span class="btn-icon">✨</span>
+                    <span>Cadastrar</span>
+                </button>
+            </div>
+
+            <button class="menu-toggle" id="menuToggle" aria-label="Menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </header>
+
+    <!-- CONTEÚDO DA PÁGINA -->
+    <main class="submit-recipe-container">
+        <div class="page-header">
+            <h1>📝 Enviar Nova Receita</h1>
+            <p>Compartilhe sua receita favorita com a comunidade ReceitasTech!</p>
+        </div>
+
+        <form id="recipeForm" class="recipe-form">
+            <!-- Seção 1: Informações Básicas -->
+            <section class="form-section">
+                <h2>📋 Informações Básicas</h2>
+                
+                <div class="form-group">
+                    <label for="title">Título da Receita *</label>
+                    <input type="text" id="title" name="title" required 
+                           placeholder="Ex: Bolo de Cenoura">
+                </div>
+
+                <div class="form-group">
+                    <label for="description">Descrição *</label>
+                    <textarea id="description" name="description" required 
+                              placeholder="Descreva sua receita em poucas palavras..."
+                              rows="3"></textarea>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="category">Categoria *</label>
+                        <select id="category" name="category" required>
+                            <option value="">Selecione uma categoria</option>
+                            <option value="doces">🍰 Doces</option>
+                            <option value="salgados">🥘 Salgados</option>
+                            <option value="massas">🍝 Massas</option>
+                            <option value="bolos">🎂 Bolos</option>
+                            <option value="paes">🍞 Pães</option>
+                            <option value="bebidas">🥤 Bebidas</option>
+                            <option value="sobremesas">🍮 Sobremesas</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="difficulty">Dificuldade *</label>
+                        <select id="difficulty" name="difficulty" required>
+                            <option value="">Selecione a dificuldade</option>
+                            <option value="Fácil">Fácil</option>
+                            <option value="Médio">Médio</option>
+                            <option value="Difícil">Difícil</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="image">URL da Imagem *</label>
+                    <input type="url" id="image" name="image" required 
+                           placeholder="assets/images/sua-receita.jpg">
+                    <small>Cole o caminho ou URL da imagem da receita</small>
+                </div>
+            </section>
+
+            <!-- Seção 2: Tempo e Porções -->
+            <section class="form-section">
+                <h2>⏱️ Tempo e Porções</h2>
+                
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="servings">Porções *</label>
+                        <input type="number" id="servings" name="servings" required 
+                               min="1" placeholder="Ex: 12">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="prepTime">Tempo de Preparo *</label>
+                        <input type="text" id="prepTime" name="prepTime" required 
+                               placeholder="Ex: 20 min">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="cookTime">Tempo de Cozimento *</label>
+                        <input type="text" id="cookTime" name="cookTime" required 
+                               placeholder="Ex: 40 min">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="totalTime">Tempo Total *</label>
+                        <input type="text" id="totalTime" name="totalTime" required 
+                               placeholder="Ex: 60 min">
+                    </div>
+                </div>
+            </section>
+
+            <!-- Seção 3: Ingredientes -->
+            <section class="form-section">
+                <h2>🥕 Ingredientes</h2>
+                
+                <div id="ingredientsContainer">
+                    <div class="ingredient-item">
+                        <input type="text" name="ingredient" 
+                               placeholder="Ex: 3 cenouras médias raspadas e picadas" required>
+                        <button type="button" class="btn-remove" onclick="removeItem(this)">❌</button>
+                    </div>
+                </div>
+                
+                <button type="button" class="btn-add" onclick="addIngredient()">
+                    ➕ Adicionar Ingrediente
+                </button>
+            </section>
+
+            <!-- Seção 4: Modo de Preparo -->
+            <section class="form-section">
+                <h2>👨‍🍳 Modo de Preparo</h2>
+                
+                <div id="stepsContainer">
+                    <div class="step-item">
+                        <span class="step-number">1</span>
+                        <textarea name="step" 
+                                  placeholder="Descreva o primeiro passo..." 
+                                  rows="2" required></textarea>
+                        <button type="button" class="btn-remove" onclick="removeItem(this)">❌</button>
+                    </div>
+                </div>
+                
+                <button type="button" class="btn-add" onclick="addStep()">
+                    ➕ Adicionar Passo
+                </button>
+            </section>
+
+            <!-- Seção 5: Dicas -->
+            <section class="form-section">
+                <h2>💡 Dicas (opcional)</h2>
+                
+                <div id="tipsContainer">
+                    <div class="tip-item">
+                        <textarea name="tip" 
+                                  placeholder="Compartilhe uma dica útil..." 
+                                  rows="2"></textarea>
+                        <button type="button" class="btn-remove" onclick="removeItem(this)">❌</button>
+                    </div>
+                </div>
+                
+                <button type="button" class="btn-add" onclick="addTip()">
+                    ➕ Adicionar Dica
+                </button>
+            </section>
+
+            <!-- Seção 6: Tags -->
+            <section class="form-section">
+                <h2>🏷️ Tags</h2>
+                
+                <div class="form-group">
+                    <label for="tags">Tags (separadas por vírgula)</label>
+                    <input type="text" id="tags" name="tags" 
+                           placeholder="Ex: bolo, cenoura, chocolate, café da tarde, festa">
+                    <small>Digite as tags separadas por vírgula</small>
+                </div>
+            </section>
+
+            <!-- Seção 7: Informações do Autor -->
+            <section class="form-section">
+                <h2>👤 Autor</h2>
+                
+                <div class="form-group">
+                    <label for="author">Nome do Autor *</label>
+                    <input type="text" id="author" name="author" required 
+                           placeholder="Seu nome ou apelido">
+                </div>
+            </section>
+
+            <!-- Botões de Ação -->
+            <div class="form-actions">
+                <button type="button" class="btn-secondary" onclick="resetForm()">
+                    🔄 Limpar Formulário
+                </button>
+                <button type="submit" class="btn-primary">
+                    ✨ Enviar Receita
+                </button>
+            </div>
+        </form>
+
+        <!-- Modal de Sucesso -->
+        <div id="successModal" class="modal">
+            <div class="modal-content success">
+                <span class="modal-icon">✅</span>
+                <h2>Receita Enviada com Sucesso!</h2>
+                <p>Sua receita foi enviada e está aguardando aprovação.</p>
+                <div class="modal-actions">
+                    <button onclick="closeModal()" class="btn-primary">OK</button>
+                    <button onclick="submitAnother()" class="btn-secondary">Enviar Outra</button>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- FOOTER -->
+    <footer>
+        <p>&copy; 2025 ReceitasTech. Todos os direitos reservados.</p>
+    </footer>
+
+    <!-- SCRIPTS -->
+    <script src="../assets/js/header.js"></script>
+    <script src="../assets/js/submit-recipe.js"></script>
+</body>
+</html>
