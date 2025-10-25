@@ -50,12 +50,11 @@ document.addEventListener('DOMContentLoaded', async () => {
             const isGitHubPages = window.location.hostname.includes('github.io');
 
             // Ajusta o caminho da imagem (adiciona ../ se necessário)
-            const imagePath = `/${recipe.image}`;
+            let imagePath = `/${recipe.image}`;
 
             // No GitHub Pages, adiciona /receitas-tech/ no início
             if (isGitHubPages) {
                 imagePath =  `receitas-tech/${recipe.image}` ;
-                console.log(imagePath);
             } 
 
             cardLink.innerHTML = `
