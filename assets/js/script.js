@@ -46,8 +46,16 @@ document.addEventListener('DOMContentLoaded', async () => {
             // Pega o nome da categoria com acento
             const categoryLabel = categoryLabels[recipe.category] || recipe.category;
             
+            // Detecta se está no GitHub Pages
+            const isGitHubPages = window.location.hostname.includes('github.io');
+
             // Ajusta o caminho da imagem (adiciona ../ se necessário)
             const imagePath = `/${recipe.image}`;
+
+            // No GitHub Pages, adiciona /receitas-tech/ no início
+            if (isGitHubPages) {
+                imagePath =  `receitas-tech/${imagePath}` ;
+            } 
 
             cardLink.innerHTML = `
                 <div class="recipe-card" data-category="${recipe.category}">
