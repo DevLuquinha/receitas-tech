@@ -20,11 +20,14 @@ document.addEventListener('DOMContentLoaded', async () => {
         const ingredientsHtml = recipe.ingredients.map(ing => `<li>${ing}</li>`).join('');
         const prepModeHtml = recipe.prepMode.map(mode => `<li>${mode}</li>`).join('');
         
+        // Ajusta o caminho da imagem (adiciona ../ se necessário)
+        const imagePath = recipe.image.startsWith('assets/') ? `../${recipe.image}` : recipe.image;
+
         content.innerHTML = `
             <h1>${recipe.title}</h1>
             
             <div class="recipe-image-container">
-                <img src="${recipe.image}" alt="${recipe.title}" class="recipe-detail-image">
+                <img src="${imagePath}" alt="${recipe.title}" class="recipe-detail-image">
             </div>
             
             <div class="recipe-meta">
