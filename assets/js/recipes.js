@@ -1,6 +1,6 @@
 // Aguarda o HTML ser completamente carregado para executar o script
 document.addEventListener('DOMContentLoaded', async () => {
-    const recipes = await getData("recipes.json");
+    const recipes = await getData("../assets/data/recipes.json");
 
     // Mapeamento de categorias para exibição com acentos
     const categoryLabels = {

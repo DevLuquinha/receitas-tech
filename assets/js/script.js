@@ -2,7 +2,7 @@
 document.addEventListener('DOMContentLoaded', async () => {
 
     // --- 1. DADOS (simulando um banco de dados) ---
-    const recipes = await getData("recipes.json");
+    const recipes = await getData("./assets/data/recipes.json");
 
     // Mapeamento de categorias para exibição com acentos
     const categoryLabels = {

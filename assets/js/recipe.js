@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', async () => {
-    const recipes = await getData("recipes.json");
+    const recipes = await getData("../assets/data/recipes.json");
     
     // 1. Pegar o ID da receita da URL
     const params = new URLSearchParams(window.location.search);

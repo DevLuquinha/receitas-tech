@@ -1,8 +1,4 @@
-const urlBase = "../assets/data/";
-
-async function getData(endpoint) {
-    let url = urlBase + endpoint;
-
+async function getData(url) {
     try {
         const response = await fetch(url);
 
