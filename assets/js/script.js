@@ -39,15 +39,15 @@ document.addEventListener('DOMContentLoaded', async () => {
 
         // Para cada receita na lista, cria um "card"
         recipesToDisplay.forEach(recipe => {
-            const cardLink = document.createElement('a');
+            let cardLink = document.createElement('a');
             cardLink.href = `pages/recipe.html?id=${recipe.id}`;
             cardLink.classList.add('recipe-card-link');
             
             // Pega o nome da categoria com acento
-            const categoryLabel = categoryLabels[recipe.category] || recipe.category;
+            let categoryLabel = categoryLabels[recipe.category] || recipe.category;
             
             // Detecta se está no GitHub Pages
-            const isGitHubPages = window.location.hostname.includes('github.io');
+            let isGitHubPages = window.location.hostname.includes('github.io');
 
             // Ajusta o caminho da imagem (adiciona ../ se necessário)
             let imagePath = `/${recipe.image}`;
