@@ -40,8 +40,8 @@ document.addEventListener('DOMContentLoaded', async () => {
             // Pega o nome da categoria com acento
             const categoryLabel = categoryLabels[recipe.category] || recipe.category;
             
-            // Ajusta o caminho da imagem (adiciona ../ se necessário)
-            const imagePath = recipe.image.startsWith('assets/') ? `../${recipe.image}` : recipe.image;
+            // Corrige o caminho da imagem para GitHub Pages
+            const imagePath = fixImagePath(recipe.image, true);
 
             cardLink.innerHTML = `
                 <div class="recipe-card" data-category="${recipe.category}">
