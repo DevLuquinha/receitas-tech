@@ -51,6 +51,8 @@
     text-decoration: none;
     color: inherit;
     display: block;
+    max-width: 350px;
+    width: 100%;
 }
 
 .recipe-card-link:hover .recipe-card {
@@ -199,9 +201,10 @@
 /* ===== GRID DE RECEITAS ===== */
 .recipe-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
     gap: 2rem;
     padding: 0 var(--spacing-unit);
     max-width: 1200px;
     margin: 0 auto;
+    justify-content: center;
 }
