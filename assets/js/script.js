@@ -47,7 +47,7 @@ document.addEventListener('DOMContentLoaded', async () => {
             const categoryLabel = categoryLabels[recipe.category] || recipe.category;
             
             // Ajusta o caminho da imagem (adiciona ../ se necessário)
-            const imagePath = recipe.image.startsWith('assets/') ? `../${recipe.image}` : recipe.image;
+            const imagePath = `/${recipe.image}`;
 
             cardLink.innerHTML = `
                 <div class="recipe-card" data-category="${recipe.category}">
