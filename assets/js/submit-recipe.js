@@ -4,6 +4,7 @@
  */
 
 let stepCounter = 1;
+let uploadedImage = null;
 
 // ===== ADICIONAR INGREDIENTE =====
 function addIngredient() {
@@ -130,7 +131,7 @@ function collectFormData() {
     const description = document.getElementById('description').value.trim();
     const category = document.getElementById('category').value;
     const difficulty = document.getElementById('difficulty').value;
-    const image = document.getElementById('image').value.trim();
+    const image = uploadedImage; // Usar a imagem em base64
     
     // Tempo e porções
     const servings = parseInt(document.getElementById('servings').value);
@@ -280,4 +281,59 @@ document.addEventListener('DOMContentLoaded', function() {
     
     prepTimeInput.addEventListener('blur', calculateTotalTime);
     cookTimeInput.addEventListener('blur', calculateTotalTime);
+});
+
+// ===== PREVIEW DE IMAGEM =====
+document.addEventListener('DOMContentLoaded', function() {
+    const imageInput = document.getElementById('image');
+    const imagePreview = document.getElementById('imagePreview');
+    
+    imageInput.addEventListener('change', function(e) {
+        const file = e.target.files[0];
+        
+        if (file) {
+            // Validar se é uma imagem
+            if (!file.type.startsWith('image/')) {
+                alert('Por favor, selecione apenas arquivos de imagem!');
+                imageInput.value = '';
+                imagePreview.innerHTML = '';
+                uploadedImage = null;
+                return;
+            }
+            
+            // Validar tamanho (máximo 5MB)
+            if (file.size > 5 * 1024 * 1024) {
+                alert('A imagem deve ter no máximo 5MB!');
+                imageInput.value = '';
+                imagePreview.innerHTML = '';
+                uploadedImage = null;
+                return;
+            }
+            
+            // Ler arquivo e converter para base64
+            const reader = new FileReader();
+            
+            reader.onload = function(event) {
+                uploadedImage = event.target.result;
+                
+                // Mostrar preview
+                imagePreview.innerHTML = `
+                    <img src="${uploadedImage}" alt="Preview">
+                    <p class="image-info">📷 ${file.name} (${(file.size / 1024).toFixed(2)} KB)</p>
+                `;
+            };
+            
+            reader.onerror = function() {
+                alert('Erro ao carregar a imagem. Tente novamente.');
+                imageInput.value = '';
+                imagePreview.innerHTML = '';
+                uploadedImage = null;
+            };
+            
+            reader.readAsDataURL(file);
+        } else {
+            imagePreview.innerHTML = '';
+            uploadedImage = null;
+        }
+    });
 });
