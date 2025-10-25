@@ -22,40 +22,6 @@ async function getData(url, retries = 2) {
     throw lastError;
 }
 
-/**
- * Função para corrigir caminhos de imagem para GitHub Pages
- * @param {string} imagePath - Caminho original da imagem
- * @param {boolean} isSubPage - Se está em uma subpágina (pages/)
- * @returns {string} - Caminho corrigido
- */
-function fixImagePath(imagePath, isSubPage = false) {
-    // Se a imagem já tem um protocolo (http/https), retorna como está
-    if (imagePath.startsWith('http')) {
-        return imagePath;
-    }
-    
-    // Detecta se está no GitHub Pages
-    const isGitHubPages = window.location.hostname.includes('github.io');
-    
-    if (isGitHubPages) {
-        // No GitHub Pages, adiciona /receitas-tech/ no início
-        if (isSubPage) {
-            // Se está em pages/, precisa do ../
-            return imagePath.startsWith('assets/') ? `../receitas-tech/${imagePath}` : imagePath;
-        } else {
-            // Se está na raiz (index.html)
-            return imagePath.startsWith('assets/') ? `receitas-tech/${imagePath}` : imagePath;
-        }
-    } else {
-        // Localmente, usa os caminhos normais
-        if (isSubPage) {
-            return imagePath.startsWith('assets/') ? `../${imagePath}` : imagePath;
-        } else {
-            return imagePath;
-        }
-    }
-}
-
 function showLoading(container) {
     container.innerHTML = `
         <div class="loading-container">

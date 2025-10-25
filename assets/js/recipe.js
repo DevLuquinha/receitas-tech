@@ -20,14 +20,11 @@ document.addEventListener('DOMContentLoaded', async () => {
         const ingredientsHtml = recipe.ingredients.map(ing => `<li>${ing}</li>`).join('');
         const prepModeHtml = recipe.prepMode.map(mode => `<li>${mode}</li>`).join('');
         
-        // Corrige o caminho da imagem para GitHub Pages
-        const imagePath = fixImagePath(recipe.image, true);
-
         content.innerHTML = `
             <h1>${recipe.title}</h1>
             
             <div class="recipe-image-container">
-                <img src="${imagePath}" alt="${recipe.title}" class="recipe-detail-image">
+                <img src="${recipe.image}" alt="${recipe.title}" class="recipe-detail-image">
             </div>
             
             <div class="recipe-meta">
