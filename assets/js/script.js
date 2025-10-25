@@ -54,7 +54,8 @@ document.addEventListener('DOMContentLoaded', async () => {
 
             // No GitHub Pages, adiciona /receitas-tech/ no início
             if (isGitHubPages) {
-                imagePath =  `receitas-tech/${imagePath}` ;
+                imagePath =  `receitas-tech/${recipe.image}` ;
+                console.log(imagePath);
             } 
 
             cardLink.innerHTML = `
