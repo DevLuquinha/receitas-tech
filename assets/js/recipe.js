@@ -1,14 +1,16 @@
 document.addEventListener('DOMContentLoaded', async () => {
-    const recipes = await getData("../assets/data/recipes.json");
-    
-    // 1. Pegar o ID da receita da URL
-    const params = new URLSearchParams(window.location.search);
-    const recipeId = parseInt(params.get('id')); // Converte o ID para número
-
-    // 2. Encontrar a receita correspondente no array de dados
-    const recipe = recipes.find(r => r.id === recipeId);
-
     const content = document.getElementById('recipe-detail-content');
+    
+    try {
+        showLoading(content);
+        const recipes = await getData("../assets/data/recipes.json");
+        
+        // 1. Pegar o ID da receita da URL
+        const params = new URLSearchParams(window.location.search);
+        const recipeId = parseInt(params.get('id')); // Converte o ID para número
+
+        // 2. Encontrar a receita correspondente no array de dados
+        const recipe = recipes.find(r => r.id === recipeId);
 
     if (recipe) {
         // 3. Se a receita foi encontrada, preencher o HTML
@@ -42,6 +44,17 @@ document.addEventListener('DOMContentLoaded', async () => {
         `;
     } else {
         // 4. Se a receita não foi encontrada, mostrar uma mensagem de erro
-        content.innerHTML = '<h1>Receita não encontrada!</h1><p>O link que você seguiu pode estar quebrado ou a receita foi removida.</p>';
+        content.innerHTML = `
+            <div class="error-container">
+                <div class="error-icon">🔍</div>
+                <h1>Receita não encontrada!</h1>
+                <p>O link que você seguiu pode estar quebrado ou a receita foi removida.</p>
+                <a href="../pages/recipes.html" class="btn-retry">← Voltar para Receitas</a>
+            </div>
+        `;
+    }
+    } catch (error) {
+        showError(content);
+        console.error('Erro ao carregar receita:', error);
     }
 });

@@ -1,6 +1,7 @@
 // Aguarda o HTML ser completamente carregado para executar o script
 document.addEventListener('DOMContentLoaded', async () => {
-    const recipes = await getData("../assets/data/recipes.json");
+    const recipesContainer = document.getElementById('recipe-container');
+    let recipes = [];
 
     // Mapeamento de categorias para exibição com acentos
     const categoryLabels = {
@@ -15,7 +16,6 @@ document.addEventListener('DOMContentLoaded', async () => {
     };
 
     // --- 2. SELEÇÃO DE ELEMENTOS DO DOM ---
-    const recipesContainer = document.getElementById('recipe-container');
     
     // --- 3. FUNÇÕES ---
     /**
@@ -56,6 +56,13 @@ document.addEventListener('DOMContentLoaded', async () => {
         });
     }   
     
-    // Exibe todas as receitas quando a página carregar
-    displayRecipes(recipes);
+    // --- 4. CARREGAR DADOS ---
+    try {
+        showLoading(recipesContainer);
+        recipes = await getData("../assets/data/recipes.json");
+        displayRecipes(recipes);
+    } catch (error) {
+        showError(recipesContainer);
+        console.error('Erro ao carregar receitas:', error);
+    }
 });

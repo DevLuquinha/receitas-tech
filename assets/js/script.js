@@ -1,8 +1,14 @@
 // Aguarda o HTML ser completamente carregado para executar o script
 document.addEventListener('DOMContentLoaded', async () => {
 
-    // --- 1. DADOS (simulando um banco de dados) ---
-    const recipes = await getData("assets/data/recipes.json");
+    // --- 1. SELEÇÃO DE ELEMENTOS DO DOM ---
+    const recipeContainer = document.getElementById('recipe-container');
+    const searchInput = document.getElementById('searchInput');
+    const filterButtons = document.querySelectorAll('.filter-btn');
+    
+    // Variável para armazenar dados e categoria
+    let recipes = [];
+    let selectedCategory = 'todos';
 
     // Mapeamento de categorias para exibição com acentos
     const categoryLabels = {
@@ -16,15 +22,7 @@ document.addEventListener('DOMContentLoaded', async () => {
         'sobremesas': 'Sobremesas'
     };
 
-    // --- 2. SELEÇÃO DE ELEMENTOS DO DOM ---
-    const recipeContainer = document.getElementById('recipe-container');
-    const searchInput = document.getElementById('searchInput');
-    const filterButtons = document.querySelectorAll('.filter-btn');
-    
-    // Variável para armazenar a categoria selecionada
-    let selectedCategory = 'todos';
-
-    // --- 3. FUNÇÕES ---
+    // --- 2. FUNÇÕES ---
     /**
      * Função para renderizar as receitas na tela.
      * @param {Array} recipesToDisplay - A lista de receitas a ser mostrada.
@@ -114,12 +112,19 @@ document.addEventListener('DOMContentLoaded', async () => {
     // Adiciona um "ouvinte" que chama a função de filtrar toda vez que o usuário digita algo
     searchInput.addEventListener('keyup', filterAndDisplayRecipes);
 
-    // --- 5. INICIALIZAÇÃO ---
-    // Define o primeiro botão como ativo
-    if (filterButtons.length > 0) {
-        filterButtons[0].classList.add('active');
+    // --- 5. CARREGAR DADOS ---
+    try {
+        showLoading(recipeContainer);
+        recipes = await getData("assets/data/recipes.json");
+        
+        // Define o primeiro botão como ativo
+        if (filterButtons.length > 0) {
+            filterButtons[0].classList.add('active');
+        }
+        
+        displayRecipes(recipes);
+    } catch (error) {
+        showError(recipeContainer);
+        console.error('Erro ao carregar receitas:', error);
     }
-    
-    // Exibe todas as receitas quando a página carrega pela primeira vez
-    displayRecipes(recipes);
 });
