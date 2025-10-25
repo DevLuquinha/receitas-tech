@@ -4,10 +4,10 @@
         "title": "Bolo de Cenoura",
         "description": "Um clássico bolo brasileiro fofinho e saboroso, perfeito para o café da tarde.",
         "image": "../assets/images/bolo-cenoura.jpeg",
-        "category": "doces",
+        "category": "bolos",
         "difficulty": "Fácil",
         "servings": 12,
-        "prepTime": "20 min",
+        "prepTime": "60 min",
         "cookTime": "40 min",
         "totalTime": "60 min",
         "ingredients": [
@@ -51,7 +51,7 @@
         "category": "massas",
         "difficulty": "Médio",
         "servings": 8,
-        "prepTime": "30 min",
+        "prepTime": "100 min",
         "cookTime": "60 min",
         "totalTime": "90 min",
         "ingredients": [
@@ -102,7 +102,7 @@
         "category": "doces",
         "difficulty": "Fácil",
         "servings": 30,
-        "prepTime": "10 min",
+        "prepTime": "30 min",
         "cookTime": "20 min",
         "totalTime": "30 min",
         "ingredients": [
@@ -147,7 +147,7 @@
         "category": "paes",
         "difficulty": "Médio",
         "servings": 15,
-        "prepTime": "30 min",
+        "prepTime": "50 min",
         "cookTime": "25 min",
         "totalTime": "120 min",
         "ingredients": [
