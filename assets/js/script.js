@@ -33,33 +33,33 @@ document.addEventListener('DOMContentLoaded', async () => {
 
         // Verifica se há receitas para exibir
         if (recipesToDisplay.length === 0) {
-            recipeContainer.innerHTML = '<p class="no-results">Nenhuma receita encontrada.</p>';
+            recipeContainer.innerHTML = '<p class="no-results">🔍 Nenhuma receita encontrada.</p>';
             return;
         }
 
         // Para cada receita na lista, cria um "card"
         recipesToDisplay.forEach(recipe => {
-            let cardLink = document.createElement('a');
+            const cardLink = document.createElement('a');
             cardLink.href = `pages/recipe.html?id=${recipe.id}`;
             cardLink.classList.add('recipe-card-link');
             
             // Pega o nome da categoria com acento
-            let categoryLabel = categoryLabels[recipe.category] || recipe.category;
+            const categoryLabel = categoryLabels[recipe.category] || recipe.category;
             
             // Detecta se está no GitHub Pages
-            let isGitHubPages = window.location.hostname.includes('github.io');
+            const isGitHubPages = window.location.hostname.includes('github.io');
 
-            // Ajusta o caminho da imagem (adiciona ../ se necessário)
-            let imagePath = `/${recipe.image}`;
-
+            // Ajusta o caminho da imagem
+            let imagePath = recipe.image;
+            
             // No GitHub Pages, adiciona /receitas-tech/ no início
             if (isGitHubPages) {
-                imagePath =  `receitas-tech/${recipe.image}` ;
-            } 
+                imagePath = `receitas-tech/${recipe.image}`;
+            }
 
             cardLink.innerHTML = `
                 <div class="recipe-card" data-category="${recipe.category}">
-                    <img src="${imagePath}" alt="${recipe.title}">
+                    <img src="${imagePath}" alt="${recipe.title}" loading="lazy">
                     <div class="card-content">
                         <h3>${recipe.title}</h3>
                         <p>⏱️ Tempo: ${recipe.prepTime}</p>
@@ -96,8 +96,6 @@ document.addEventListener('DOMContentLoaded', async () => {
         }
 
         displayRecipes(filteredRecipes);
-        console.log('Categoria selecionada:', selectedCategory);
-        console.log('Receitas filtradas:', filteredRecipes);
     }
 
     /** 
@@ -119,11 +117,11 @@ document.addEventListener('DOMContentLoaded', async () => {
         });
     });
 
-    // --- 4. EVENTOS ---
+    // --- 3. EVENTOS ---
     // Adiciona um "ouvinte" que chama a função de filtrar toda vez que o usuário digita algo
     searchInput.addEventListener('keyup', filterAndDisplayRecipes);
 
-    // --- 5. CARREGAR DADOS ---
+    // --- 4. CARREGAR DADOS ---
     try {
         showLoading(recipeContainer);
         recipes = await getData("assets/data/recipes.json");
