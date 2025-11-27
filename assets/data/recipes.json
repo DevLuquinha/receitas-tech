@@ -7,7 +7,7 @@
         "category": "bolos",
         "difficulty": "Fácil",
         "servings": 12,
-        "prepTime": "60 min",
+        "prepTime": "20 min",
         "cookTime": "40 min",
         "totalTime": "60 min",
         "ingredients": [
@@ -51,8 +51,8 @@
         "category": "massas",
         "difficulty": "Médio",
         "servings": 8,
-        "prepTime": "100 min",
-        "cookTime": "60 min",
+        "prepTime": "40 min",
+        "cookTime": "50 min",
         "totalTime": "90 min",
         "ingredients": [
             "500g de massa de lasanha pré-cozida",
@@ -102,7 +102,7 @@
         "category": "doces",
         "difficulty": "Fácil",
         "servings": 30,
-        "prepTime": "30 min",
+        "prepTime": "10 min",
         "cookTime": "20 min",
         "totalTime": "30 min",
         "ingredients": [
@@ -147,7 +147,7 @@
         "category": "paes",
         "difficulty": "Médio",
         "servings": 15,
-        "prepTime": "50 min",
+        "prepTime": "30 min",
         "cookTime": "25 min",
         "totalTime": "120 min",
         "ingredients": [
@@ -188,5 +188,268 @@
         "createdAt": "2024-02-10",
         "rating": 4.7,
         "reviews": 234
+    },
+    {
+        "id": 5,
+        "title": "Feijoada Completa",
+        "description": "A rainha da culinária brasileira. Feijão preto rico, carnes defumadas e muito sabor para o fim de semana.",
+        "image": "assets/images/feijoada.jpg",
+        "category": "salgados",
+        "difficulty": "Difícil",
+        "servings": 10,
+        "prepTime": "40 min",
+        "cookTime": "120 min",
+        "totalTime": "160 min",
+        "ingredients": [
+            "1kg de feijão preto",
+            "500g de carne seca dessalgada",
+            "500g de costelinha de porco dessalgada",
+            "300g de linguiça calabresa em rodelas",
+            "300g de paio em rodelas",
+            "200g de bacon em cubos",
+            "2 cebolas grandes picadas",
+            "6 dentes de alho picados",
+            "4 folhas de louro",
+            "Laranjas para acompanhar",
+            "Couve refogada para acompanhar"
+        ],
+        "prepMode": [
+            "Deixe o feijão de molho por 12 horas. Troque a água e coloque para cozinhar na pressão com o louro por 30 minutos.",
+            "Em uma panela grande, frite o bacon até dourar. Adicione a cebola e o alho e refogue.",
+            "Adicione a carne seca e a costelinha (previamente cozidas ou dessalgadas) e refogue bem.",
+            "Acrescente as linguiças e frite um pouco mais.",
+            "Junte o feijão cozido (com o caldo) às carnes.",
+            "Deixe cozinhar em fogo baixo por cerca de 40 a 60 minutos para o caldo engrossar e os sabores se misturarem.",
+            "Acerte o sal se necessário.",
+            "Sirva com arroz branco, farofa, couve e laranja."
+        ],
+        "tips": [
+            "Para um caldo mais grosso, retire uma concha de grãos cozidos, amasse-os e devolva à panela.",
+            "Sirva com um molho de pimenta caseiro para realçar o sabor."
+        ],
+        "tags": [
+            "feijoada",
+            "feijão",
+            "porco",
+            "brasil",
+            "almoço de domingo"
+        ],
+        "author": "ReceitasTech",
+        "createdAt": "2024-03-05",
+        "rating": 4.9,
+        "reviews": 412
+    },
+    {
+        "id": 6,
+        "title": "Pão de Queijo Mineiro",
+        "description": "O verdadeiro pão de queijo: crocante por fora, elástico por dentro e com muito queijo.",
+        "image": "assets/images/pao-queijo.jpg",
+        "category": "salgados",
+        "difficulty": "Médio",
+        "servings": 25,
+        "prepTime": "30 min",
+        "cookTime": "25 min",
+        "totalTime": "55 min",
+        "ingredients": [
+            "500g de polvilho azedo",
+            "1 xícara (chá) de leite",
+            "1/2 xícara (chá) de óleo",
+            "1/2 xícara (chá) de água",
+            "1 colher (chá) de sal",
+            "2 ovos",
+            "300g de queijo meia cura ralado grosso"
+        ],
+        "prepMode": [
+            "Em uma panela, ferva o leite, o óleo, a água e o sal.",
+            "Coloque o polvilho em uma tigela grande e escalde com a mistura fervente, mexendo bem com uma colher de pau.",
+            "Espere a massa amornar para não cozinhar os ovos.",
+            "Adicione os ovos um a um, amassando com as mãos.",
+            "Acrescente o queijo e continue amassando até a massa ficar homogênea e levemente pegajosa.",
+            "Unte as mãos com óleo, faça bolinhas e coloque em uma assadeira (não precisa untar a forma).",
+            "Asse em forno preaquecido a 200°C por cerca de 25 minutos ou até dourarem."
+        ],
+        "tips": [
+            "Se a massa ficar muito dura, adicione mais um ovo.",
+            "Use queijo meia cura ou canastra para o sabor autêntico mineiro.",
+            "Pode congelar as bolinhas cruas e assar direto do freezer."
+        ],
+        "tags": [
+            "pão de queijo",
+            "minas gerais",
+            "lanche",
+            "sem glúten",
+            "café"
+        ],
+        "author": "ReceitasTech",
+        "createdAt": "2024-03-10",
+        "rating": 5.0,
+        "reviews": 650
+    },
+    {
+        "id": 7,
+        "title": "Mousse de Maracujá",
+        "description": "A sobremesa mais fácil e refrescante, com o equilíbrio perfeito entre o doce e o azedinho.",
+        "image": "assets/images/mousse-maracuja.jpg",
+        "category": "sobremesas",
+        "difficulty": "Fácil",
+        "servings": 8,
+        "prepTime": "10 min",
+        "cookTime": "0 min",
+        "totalTime": "240 min",
+        "ingredients": [
+            "1 lata de leite condensado",
+            "1 lata de creme de leite (sem soro)",
+            "1 xícara (chá) de suco de maracujá concentrado",
+            "Polpa de 1 maracujá fresco (para decorar)"
+        ],
+        "prepMode": [
+            "No liquidificador, bata o leite condensado, o creme de leite e o suco concentrado de maracujá.",
+            "Bata por cerca de 3 a 5 minutos até obter um creme bem aerado.",
+            "Despeje em taças individuais ou em uma travessa.",
+            "Decore com a polpa do maracujá fresco por cima.",
+            "Leve à geladeira por no mínimo 4 horas antes de servir."
+        ],
+        "tips": [
+            "Certifique-se de que o suco concentrado seja puro, sem açúcar adicionado.",
+            "Para uma textura mais firme, você pode adicionar 6g de gelatina incolor hidratada, mas a receita original fica cremosa sem ela."
+        ],
+        "tags": [
+            "mousse",
+            "maracujá",
+            "sobremesa",
+            "rápido",
+            "verão"
+        ],
+        "author": "ReceitasTech",
+        "createdAt": "2024-03-12",
+        "rating": 4.6,
+        "reviews": 189
+    },
+    {
+        "id": 8,
+        "title": "Coxinha de Frango",
+        "description": "A rainha dos salgados brasileiros. Massa macia e recheio de frango cremoso e temperado.",
+        "image": "assets/images/coxinha.jpg",
+        "category": "salgados",
+        "difficulty": "Difícil",
+        "servings": 20,
+        "prepTime": "40 min",
+        "cookTime": "30 min",
+        "totalTime": "70 min",
+        "ingredients": [
+            "2 xícaras (chá) de caldo de galinha",
+            "2 xícaras (chá) de farinha de trigo",
+            "2 colheres (sopa) de manteiga",
+            "500g de peito de frango cozido e desfiado",
+            "1 cebola picada",
+            "Salsinha e cebolinha a gosto",
+            "Sal e pimenta a gosto",
+            "200g de requeijão cremoso (catupiry)",
+            "Ovo e farinha de rosca para empanar"
+        ],
+        "prepMode": [
+            "Para o recheio, refogue a cebola, junte o frango, tempere com sal, pimenta e cheiro-verde. Misture o requeijão e reserve.",
+            "Para a massa, ferva o caldo de galinha com a manteiga. Junte a farinha de uma vez e mexa vigorosamente até desgrudar do fundo.",
+            "Deixe a massa esfriar um pouco e sove até ficar lisa.",
+            "Abra pequenas porções da massa na mão, coloque o recheio e feche moldando no formato de coxinha.",
+            "Passe as coxinhas no ovo batido e depois na farinha de rosca.",
+            "Frite em óleo quente até dourarem."
+        ],
+        "tips": [
+            "Para a massa não rachar, certifique-se de que o recheio não esteja muito úmido ou quente na hora de modelar.",
+            "O óleo deve estar bem quente para a coxinha ficar sequinha."
+        ],
+        "tags": [
+            "salgado",
+            "frango",
+            "festa",
+            "fritura",
+            "lanche"
+        ],
+        "author": "ReceitasTech",
+        "createdAt": "2024-03-20",
+        "rating": 4.9,
+        "reviews": 720
+    },
+    {
+        "id": 9,
+        "title": "Pudim de Leite Condensado",
+        "description": "Pudim liso, sem furinhos (ou com, se preferir), com uma calda de caramelo perfeita.",
+        "image": "assets/images/pudim.jpg",
+        "category": "sobremesas",
+        "difficulty": "Médio",
+        "servings": 10,
+        "prepTime": "20 min",
+        "cookTime": "90 min",
+        "totalTime": "230 min",
+        "ingredients": [
+            "1 lata de leite condensado",
+            "2 latas de leite (use a lata de leite condensado como medida)",
+            "3 ovos",
+            "1 xícara (chá) de açúcar (para a calda)",
+            "1/2 xícara (chá) de água (para a calda)"
+        ],
+        "prepMode": [
+            "Para a calda, derreta o açúcar na própria forma de pudim até virar caramelo. Adicione a água com cuidado e deixe dissolver até formar uma calda grossa. Espalhe pela forma.",
+            "No liquidificador, bata o leite condensado, o leite e os ovos por 3 minutos.",
+            "Despeje a mistura na forma caramelizada (use uma peneira se quiser um pudim sem furinhos).",
+            "Cubra com papel alumínio e asse em banho-maria no forno a 180°C por 1h30.",
+            "Deixe esfriar e leve à geladeira por pelo menos 2 horas antes de desenformar."
+        ],
+        "tips": [
+            "Se gostar de furinhos, bata menos no liquidificador e não use a peneira.",
+            "Desenforme apenas quando estiver bem gelado para não quebrar."
+        ],
+        "tags": [
+            "pudim",
+            "leite condensado",
+            "sobremesa",
+            "clássico",
+            "caramelo"
+        ],
+        "author": "ReceitasTech",
+        "createdAt": "2024-03-22",
+        "rating": 5.0,
+        "reviews": 1050
+    },
+    {
+        "id": 10,
+        "title": "Caipirinha de Limão",
+        "description": "O drink brasileiro mais famoso do mundo. Refrescante e forte na medida certa.",
+        "image": "assets/images/caipirinha.jpg",
+        "category": "bebidas",
+        "difficulty": "Fácil",
+        "servings": 1,
+        "prepTime": "10 min",
+        "cookTime": "0 min",
+        "totalTime": "10 min",
+        "ingredients": [
+            "1 limão taiti",
+            "2 colheres (sobremesa) de açúcar",
+            "60ml de cachaça (ou vodka, para caipiroska)",
+            "Gelo a gosto"
+        ],
+        "prepMode": [
+            "Corte o limão ao meio e retire o miolo branco (para não amargar). Corte em fatias finas ou cubos.",
+            "Coloque o limão em um copo baixo e adicione o açúcar.",
+            "Macere suavemente com um socador para extrair o suco, sem agredir muito a casca.",
+            "Encha o copo com gelo.",
+            "Adicione a cachaça e mexa bem com uma colher de baixo para cima."
+        ],
+        "tips": [
+            "Use açúcar refinado para dissolver mais fácil, mas o cristal dá uma textura clássica.",
+            "Se preferir mais fraca, adicione um pouco de água com gás."
+        ],
+        "tags": [
+            "drink",
+            "bebida alcoólica",
+            "limão",
+            "brasil",
+            "verão"
+        ],
+        "author": "ReceitasTech",
+        "createdAt": "2024-03-25",
+        "rating": 4.8,
+        "reviews": 515
     }
 ]
