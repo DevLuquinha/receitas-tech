@@ -1,11 +1,599 @@
+<div align="center">
+
 # 🍳 ReceitasTech
 
-**Um site moderno de receitas culinárias com busca em tempo real, filtros por categoria e design responsivo.**
+**A modern recipe website with real-time search, category filters, and responsive design**
 
 [![GitHub Pages](https://img.shields.io/badge/GitHub%20Pages-Live-success?style=flat&logo=github)](https://devluquinha.github.io/receitas-tech/)
 [![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=flat&logo=html5&logoColor=white)](https://developer.mozilla.org/en-US/docs/Web/HTML)
 [![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=flat&logo=css3&logoColor=white)](https://developer.mozilla.org/en-US/docs/Web/CSS)
 [![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=flat&logo=javascript&logoColor=black)](https://developer.mozilla.org/en-US/docs/Web/JavaScript)
+[![License](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
+
+[🇺🇸 English](#english) | [🇧🇷 Português](#português)
+
+</div>
+
+---
+
+<div id="english"></div>
+
+## 📖 Table of Contents
+
+- [About the Project](#about-the-project)
+- [Features](#features)
+- [Technologies](#technologies-used)
+- [Project Structure](#project-structure)
+- [Getting Started](#getting-started)
+- [Design System](#design-system)
+- [Technical Features](#technical-features)
+- [Data Structure](#data-structure)
+- [Roadmap](#roadmap)
+- [Contributing](#contributing)
+- [Troubleshooting](#troubleshooting)
+- [License](#license)
+- [Developer](#developer)
+
+---
+
+## 📋 About the Project
+
+**ReceitasTech** is a modern and intuitive web platform for discovering, exploring, and sharing amazing culinary recipes. Focused on user experience and performance, the website offers real-time search, dynamic filters, and a responsive design that works perfectly on any device.
+
+### 🎯 Goal
+
+Create a simple and enjoyable experience for recipe seekers by combining:
+- **Functionality**: Fast search and intelligent filters
+- **Design**: Modern and attractive interface
+- **Performance**: Fast and optimized loading
+- **Accessibility**: Semantic and responsive code
+
+---
+
+## ✨ Features
+
+### 🔍 **Search and Filters**
+- ✅ Real-time search as you type
+- ✅ Category filters (Sweets, Savory, Pasta, Cakes, Breads, Drinks, Desserts)
+- ✅ Combined search + category filter
+- ✅ Visual feedback when no results found
+
+### 📱 **Interface and Design**
+- ✅ Responsive design (Mobile, Tablet, Desktop)
+- ✅ Recipe cards with images and information
+- ✅ Hover effects and smooth transitions
+- ✅ Loading spinner during data fetch
+- ✅ User-friendly error messages
+
+### 🍽️ **Recipes**
+- ✅ Detailed page for each recipe
+- ✅ Complete ingredients list
+- ✅ Step-by-step preparation guide
+- ✅ Information: time, difficulty, servings
+- ✅ High-quality images
+- ✅ Tags and categorization
+
+### 📝 **Recipe Submission**
+- ✅ Complete form to submit recipes
+- ✅ Image upload (with preview)
+- ✅ Field validation
+- ✅ Dynamic fields (ingredients, steps, tips)
+- ✅ Auto-calculation of total time
+- ✅ Confirmation modal
+
+### 🚀 **Performance**
+- ✅ Retry system for API requests
+- ✅ Lazy loading for images
+- ✅ Optimized paths for GitHub Pages
+- ✅ Resource caching and optimization
+
+---
+
+## 🛠️ Technologies Used
+
+### Frontend
+- **HTML5**: Semantic and accessible structure
+- **CSS3**: Modern and responsive styling
+  - CSS Grid and Flexbox
+  - CSS Variables (Custom Properties)
+  - Animations and Transitions
+  - Media Queries
+- **JavaScript ES6+**: Logic and interactivity
+  - Async/Await
+  - Fetch API
+  - DOM Manipulation
+  - Event Listeners
+  - Arrow Functions
+
+### External Resources
+- **Google Fonts**: Poppins (300, 400, 600, 700)
+- **GitHub Pages**: Free hosting
+
+### Development Tools
+- **VS Code**: Code editor
+- **Git**: Version control
+- **Live Server**: Local development server
+
+---
+
+## 📁 Project Structure
+
+```
+receitas-tech/
+├── 📄 index.html                    # Main page
+├── 📄 LICENSE                       # Project license
+├── 📄 README.md                     # This file
+│
+├── 📁 assets/                       # Project resources
+│   ├── 📁 components/              
+│   │   └── header.html             # Header component
+│   │
+│   ├── 📁 css/                     # Styles
+│   │   ├── style.css               # ⭐ Main CSS (imports all)
+│   │   ├── variables.css           # Global variables (colors, spacing)
+│   │   ├── base.css                # Reset and base styles
+│   │   ├── components.css          # Reusable components
+│   │   ├── header.css              # Header styles
+│   │   ├── index.css               # Home page
+│   │   ├── recipes.css             # Gallery page
+│   │   ├── recipe-detail.css       # Detail page
+│   │   ├── submit-recipe.css       # Submission page
+│   │   └── responsive.css          # Media queries
+│   │
+│   ├── 📁 data/                    # JSON data
+│   │   └── recipes.json            # Recipe database
+│   │
+│   ├── 📁 images/                  # Recipe images
+│   │   ├── bolo-cenoura.jpeg
+│   │   ├── brigadeiro.jpeg
+│   │   ├── lasanha.jpg
+│   │   └── pao-frances.jpeg
+│   │
+│   └── 📁 js/                      # JavaScript files
+│       ├── api.js                  # API functions (getData, loading, error)
+│       ├── header.js               # Header logic
+│       ├── script.js               # Main page
+│       ├── recipes.js              # Gallery page
+│       ├── recipe.js               # Detail page
+│       └── submit-recipe.js        # Submission page
+│
+├── 📁 docs/                        # Documentation
+│   └── CSS_STRUCTURE.md            # CSS structure
+│
+└── 📁 pages/                       # HTML pages
+    ├── recipe.html                 # Recipe details
+    ├── recipes.html                # Recipe gallery
+    ├── submit-recipe.html          # Submit recipe
+    └── template.html               # Base template
+```
+
+---
+
+## 🚀 Getting Started
+
+### Prerequisites
+
+- Modern web browser (Chrome, Firefox, Safari, Edge)
+- Code editor (VS Code recommended)
+- Git (optional)
+
+### Installation and Execution
+
+#### **Option 1: Access Online**
+```
+https://devluquinha.github.io/receitas-tech/
+```
+
+#### **Option 2: Run Locally**
+
+1. **Clone the repository**
+   ```bash
+   git clone https://github.com/DevLuquinha/receitas-tech.git
+   cd receitas-tech
+   ```
+
+2. **Open in browser**
+   
+   **Method A - Direct:**
+   - Open the `index.html` file directly in the browser
+   
+   **Method B - Live Server (Recommended):**
+   - Install "Live Server" extension in VS Code
+   - Right-click on `index.html` → "Open with Live Server"
+   
+   **Method C - Python:**
+   ```bash
+   # Python 3
+   python -m http.server 8000
+   
+   # Access: http://localhost:8000
+   ```
+
+3. **Navigate the website**
+   - Use the search bar to find recipes
+   - Click on category filters
+   - Explore recipe details
+   - Test the recipe submission page
+
+---
+
+## 🎨 Design System
+
+### Color Palette
+
+```css
+/* Primary Colors */
+--primary-color: #FF6B6B      /* Vibrant red */
+--secondary-color: #4ECDC4    /* Aqua green */
+
+/* Text Colors */
+--text-color-dark: #333       /* Dark text */
+--text-color-light: #f4f4f4   /* Light text */
+
+/* Background Colors */
+--background-light: #ffffff   /* White background */
+--background-dark: #f9f9f9    /* Light gray background */
+
+/* Border Colors */
+--border-color: #ddd          /* Gray border */
+```
+
+### Typography
+
+- **Font**: Poppins (Google Fonts)
+- **Weights**: 300 (Light), 400 (Regular), 600 (SemiBold), 700 (Bold)
+- **Sizes**:
+  - Headings: 2.5rem - 3rem
+  - Subheadings: 1.5rem - 2rem
+  - Body: 1rem
+  - Small: 0.85rem
+
+### Spacing
+
+```css
+--spacing-unit: 1rem       /* Base: 16px */
+--spacing-small: 0.5rem    /* 8px */
+--spacing-medium: 1.5rem   /* 24px */
+--spacing-large: 2rem      /* 32px */
+--spacing-xlarge: 3rem     /* 48px */
+```
+
+### Border Radius
+
+```css
+--border-radius-small: 8px
+--border-radius-medium: 12px
+--border-radius-large: 20px
+--border-radius-round: 50px
+```
+
+---
+
+## 📱 Responsiveness
+
+### Breakpoints
+
+```css
+/* Desktop (default) */
+> 768px
+
+/* Tablet */
+≤ 768px
+
+/* Mobile */
+≤ 480px
+
+/* Large Desktop (optional) */
+≥ 1400px
+```
+
+### Responsive Behavior
+
+- **Recipe grid**: Automatically adapts columns
+- **Header**: Hamburger menu on mobile
+- **Cards**: Limited maximum width
+- **Images**: Resize proportionally
+- **Forms**: Single column on mobile
+
+---
+
+## 🔧 Technical Features
+
+### JavaScript
+
+#### **Real-Time Search**
+```javascript
+searchInput.addEventListener('keyup', filterAndDisplayRecipes);
+```
+- Filters recipes as the user types
+- Combines text search + category filter
+- Optimized performance (no unnecessary delays)
+
+#### **DOM Manipulation**
+```javascript
+recipesToDisplay.forEach(recipe => {
+    const cardLink = document.createElement('a');
+    // Creates elements dynamically
+});
+```
+
+#### **Retry System**
+```javascript
+async function getData(url, retries = 2) {
+    // Retries on failure
+    // Incremental delay between attempts
+}
+```
+
+#### **Path Correction (GitHub Pages)**
+```javascript
+function fixImagePath(imagePath, isSubPage = false) {
+    // Detects environment (local vs GitHub Pages)
+    // Automatically adjusts paths
+}
+```
+
+### CSS
+
+#### **CSS Variables**
+```css
+:root {
+    --primary-color: #FF6B6B;
+}
+
+.button {
+    background: var(--primary-color);
+}
+```
+
+#### **Responsive Grid**
+```css
+.recipe-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 2rem;
+}
+```
+
+#### **Smooth Transitions**
+```css
+.recipe-card {
+    transition: transform var(--transition-normal);
+}
+
+.recipe-card:hover {
+    transform: translateY(-8px);
+}
+```
+
+---
+
+## 📊 Data Structure
+
+### Recipe Model (JSON)
+
+```json
+{
+    "id": 1,
+    "title": "Carrot Cake",
+    "description": "A classic Brazilian cake...",
+    "image": "assets/images/bolo-cenoura.jpeg",
+    "category": "cakes",
+    "difficulty": "Easy",
+    "servings": 12,
+    "prepTime": "20 min",
+    "cookTime": "40 min",
+    "totalTime": "60 min",
+    "ingredients": ["...", "..."],
+    "prepMode": ["...", "..."],
+    "tips": ["...", "..."],
+    "tags": ["...", "..."],
+    "author": "ReceitasTech",
+    "createdAt": "2024-01-15",
+    "rating": 4.8,
+    "reviews": 342
+}
+```
+
+---
+
+## 🔮 Roadmap
+
+### In Development
+- [ ] Dark mode
+- [ ] Search by ingredients
+- [ ] Advanced filters (time, difficulty)
+
+### Planned
+- [ ] Backend with ASP.NET Core (C#)
+- [ ] Database (PostgreSQL or MySQL)
+- [ ] User authentication
+- [ ] Rating and comment system
+- [ ] Real image upload
+- [ ] Social sharing
+- [ ] PWA (Progressive Web App)
+- [ ] Synchronized favorite recipes
+- [ ] Complete REST API
+
+---
+
+## 🤝 Contributing
+
+Contributions are always welcome! Here's how you can help:
+
+### 1. Fork the Project
+```bash
+# Click "Fork" on GitHub
+```
+
+### 2. Create a Branch
+```bash
+git checkout -b feature/MyNewFeature
+```
+
+### 3. Make Your Changes
+```bash
+git add .
+git commit -m "Add: my amazing new feature"
+```
+
+### 4. Push to GitHub
+```bash
+git push origin feature/MyNewFeature
+```
+
+### 5. Open a Pull Request
+- Describe your changes
+- Add screenshots if visual changes
+- Wait for review
+
+### Types of Contributions
+
+- 🐛 Report bugs
+- ✨ Suggest new features
+- 📝 Improve documentation
+- 🎨 Improve design/UX
+- ⚡ Performance optimizations
+- ♿ Accessibility improvements
+
+---
+
+## 📝 Code Conventions
+
+### JavaScript
+```javascript
+// ✅ Good
+const userName = "João";
+function calculateTotal(items) {
+    return items.reduce((sum, item) => sum + item.price, 0);
+}
+
+// ❌ Avoid
+var user_name = "João";
+function calc(i) {
+    let t = 0;
+    for(let x of i) t += x.price;
+    return t;
+}
+```
+
+### CSS
+```css
+/* ✅ Good - Use variables */
+.button {
+    background: var(--primary-color);
+    padding: var(--spacing-medium);
+}
+
+/* ❌ Avoid - Hardcoded values */
+.button {
+    background: #FF6B6B;
+    padding: 24px;
+}
+```
+
+### Commits
+```bash
+# Format: Type: Short description
+
+Add: new search functionality
+Fix: fixes bug in category filter
+Update: updates README with new information
+Style: improves card styling
+Refactor: reorganizes folder structure
+Docs: adds API documentation
+```
+
+---
+
+## 🐛 Troubleshooting
+
+### Images not loading
+```bash
+# Check if images exist in assets/images/
+# Clear browser cache (Ctrl + Shift + R)
+# Check console for 404 errors
+```
+
+### Styles not applied
+```bash
+# Check if style.css is being imported
+# Confirm all @imports are correct
+# Clear cache (Ctrl + F5)
+```
+
+### JavaScript not working
+```bash
+# Open Console (F12)
+# Check for console errors
+# Confirm scripts are in correct order
+```
+
+---
+
+## 📄 License
+
+This project is licensed under the license specified in the [LICENSE](LICENSE) file.
+
+---
+
+## 👨‍💻 Developer
+
+**DevLuquinha**
+
+- GitHub: [@DevLuquinha](https://github.com/DevLuquinha)
+- LinkedIn: [Lucas Emmanuel](https://www.linkedin.com/in/devlucasemmanuel/)
+
+---
+
+## 🙏 Acknowledgments
+
+- Google Fonts for Poppins font
+- GitHub Pages for free hosting
+- Open source community
+
+---
+
+## 📈 Project Status
+
+🟢 **Active and in development**
+
+- Last update: December 2025
+- Version: 1.0.0
+- Status: Functional and hosted
+
+---
+
+<div align="center">
+
+### ⭐ If this project helped you, consider giving it a star!
+
+**Made with ❤️ and ☕ by DevLuquinha**
+
+</div>
+
+---
+---
+
+<div id="português"></div>
+
+# 🇧🇷 Versão em Português
+
+## 📖 Índice
+
+- [Sobre o Projeto](#sobre-o-projeto)
+- [Funcionalidades](#funcionalidades)
+- [Tecnologias](#tecnologias-utilizadas)
+- [Estrutura do Projeto](#estrutura-do-projeto)
+- [Como Usar](#como-usar)
+- [Design System](#design-system)
+- [Funcionalidades Técnicas](#funcionalidades-técnicas)
+- [Estrutura de Dados](#estrutura-de-dados)
+- [Roadmap](#roadmap)
+- [Como Contribuir](#como-contribuir)
+- [Troubleshooting](#troubleshooting)
+- [Licença](#licença)
+- [Desenvolvedor](#desenvolvedor)
 
 ---
 
@@ -354,7 +942,7 @@ function fixImagePath(imagePath, isSubPage = false) {
     "category": "bolos",
     "difficulty": "Fácil",
     "servings": 12,
-    "prepTime": "60 min",
+    "prepTime": "20 min",
     "cookTime": "40 min",
     "totalTime": "60 min",
     "ingredients": ["...", "..."],
@@ -422,9 +1010,9 @@ git push origin feature/MinhaNovaFeature
 
 ### Tipos de Contribuições
 
-- � Reportar bugs
+- 🐛 Reportar bugs
 - ✨ Sugerir novas funcionalidades
-- �📝 Melhorar documentação
+- 📝 Melhorar documentação
 - 🎨 Melhorar design/UX
 - ⚡ Otimizações de performance
 - ♿ Melhorias de acessibilidade
@@ -533,7 +1121,7 @@ Este projeto está sob a licença especificada no arquivo [LICENSE](LICENSE).
 
 🟢 **Ativo e em desenvolvimento**
 
-- Última atualização: Outubro 2025
+- Última atualização: Dezembro 2025
 - Versão: 1.0.0
 - Status: Funcional e hospedado
 
