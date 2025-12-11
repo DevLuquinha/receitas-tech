@@ -48,7 +48,7 @@ document.addEventListener('DOMContentLoaded', async () => {
                     <img src="${imagePath}" alt="${recipe.title}">
                     <div class="card-content">
                         <h3>${recipe.title}</h3>
-                        <p>⏱️ Tempo: ${recipe.prepTime}</p>
+                        <p>⏱️ Tempo: ${recipe.totalTime}</p>
                         <span class="category-badge">${categoryLabel}</span>
                     </div>
                 </div>
