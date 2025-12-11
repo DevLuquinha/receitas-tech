@@ -18,6 +18,21 @@
 
 <div id="english"></div>
 
+## 🎥 Demo
+
+### Video Demo
+
+https://github.com/DevLuquinha/receitas-tech/assets/marketing/ReceitasTech.mp4
+
+### Screenshots
+
+<div align="center">
+  <img src="assets/marketing/ReceitasTech-image-1.png" alt="ReceitasTech Screenshot 1" width="45%">
+  <img src="assets/marketing/ReceitasTech-image-2.png" alt="ReceitasTech Screenshot 2" width="45%">
+</div>
+
+---
+
 ## 📖 Table of Contents
 
 - [About the Project](#about-the-project)
@@ -578,6 +593,21 @@ This project is licensed under the license specified in the [LICENSE](LICENSE) f
 <div id="português"></div>
 
 # 🇧🇷 Versão em Português
+
+## 🎥 Demonstração
+
+### Vídeo Demo
+
+https://github.com/DevLuquinha/receitas-tech/assets/marketing/ReceitasTech.mp4
+
+### Capturas de Tela
+
+<div align="center">
+  <img src="assets/marketing/ReceitasTech-image-1.png" alt="ReceitasTech Screenshot 1" width="45%">
+  <img src="assets/marketing/ReceitasTech-image-2.png" alt="ReceitasTech Screenshot 2" width="45%">
+</div>
+
+---
 
 ## 📖 Índice
 
