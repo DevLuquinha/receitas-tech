@@ -20,9 +20,11 @@
 
 ## 🎥 Demo
 
-### Video Demo
+### Project Preview
 
-https://github.com/DevLuquinha/receitas-tech/assets/marketing/ReceitasTech.mp4
+<div align="center">
+  <img src="assets/marketing/ReceitasTech.gif" alt="ReceitasTech Demo" width="80%">
+</div>
 
 ### Screenshots
 
@@ -596,9 +598,11 @@ This project is licensed under the license specified in the [LICENSE](LICENSE) f
 
 ## 🎥 Demonstração
 
-### Vídeo Demo
+### Prévia do Projeto
 
-https://github.com/DevLuquinha/receitas-tech/assets/marketing/ReceitasTech.mp4
+<div align="center">
+  <img src="assets/marketing/ReceitasTech.gif" alt="ReceitasTech Demo" width="80%">
+</div>
 
 ### Capturas de Tela
 
